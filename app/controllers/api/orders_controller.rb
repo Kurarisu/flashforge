@@ -4,7 +4,7 @@ module Api
 
     def index
       orders = Order.includes(:user, :product, :voucher).all
-      render json: orders.as_json(include: { user: { only: [:id, :name, :email] }, product: { only: [:id, :name, :price] }, voucher: { only: [:id, :code, :discount] } })
+      render json: orders.as_json(include: { user: { only: [ :id, :name, :email ] }, product: { only: [ :id, :name, :price ] }, voucher: { only: [ :id, :code, :discount ] } })
     end
   end
 end

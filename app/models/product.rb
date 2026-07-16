@@ -5,7 +5,7 @@ class Product < ApplicationRecord
 
   has_one :flash_sale, dependent: :destroy
 
-  after_commit :clear_product_cache, on: [:create, :update, :destroy]
+  after_commit :clear_product_cache, on: [ :create, :update, :destroy ]
 
   def checkout!(quantity = 1)
     quantity = quantity.to_i

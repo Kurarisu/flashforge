@@ -13,18 +13,18 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   namespace :api do
-    resources :users, only: [:index]
-    resources :products, only: [:index] do
+    resources :users, only: [ :index ]
+    resources :products, only: [ :index ] do
       member do
         post :checkout
       end
     end
-    resources :orders, only: [:index]
-    resources :vouchers, only: [:index, :create] do
+    resources :orders, only: [ :index ]
+    resources :vouchers, only: [ :index, :create ] do
       collection do
         post :redeem
       end
     end
-    resources :flash_sales, only: [:index, :create]
+    resources :flash_sales, only: [ :index, :create ]
   end
 end
