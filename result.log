@@ -1,0 +1,42 @@
+Running 20 concurrent checkout requests for product 1 as user 1
+{"id":91,"user_id":1,"product_id":1,"quantity":1,"unit_price":"19.99","total_price":"19.99","created_at":"2026-07-07T05:01:58.206Z","updated_at":"2026-07-07T05:01:58.206Z","user":{"id":1,"name":"Alice","email":"alice@example.com"},"product":{"price":"19.99","id":1,"name":"Standard Widget"}}
+STATUS:201 REQUEST:http://localhost:3000/api/products/1/checkout
+{"id":90,"user_id":1,"product_id":1,"quantity":1,"unit_price":"19.99","total_price":"19.99","created_at":"2026-07-07T05:01:58.170Z","updated_at":"2026-07-07T05:01:58.170Z","user":{"id":1,"name":"Alice","email":"alice@example.com"},"product":{"price":"19.99","id":1,"name":"Standard Widget"}}
+STATUS:201 REQUEST:http://localhost:3000/api/products/1/checkout
+{"id":92,"user_id":1,"product_id":1,"quantity":1,"unit_price":"19.99","total_price":"19.99","created_at":"2026-07-07T05:01:58.231Z","updated_at":"2026-07-07T05:01:58.231Z","user":{"id":1,"name":"Alice","email":"alice@example.com"},"product":{"price":"19.99","id":1,"name":"Standard Widget"}}
+STATUS:201 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+{"error":"out of stock"}
+STATUS:422 REQUEST:http://localhost:3000/api/products/1/checkout
+Completed 20 requests

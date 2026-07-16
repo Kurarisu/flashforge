@@ -1,0 +1,48 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: flashforge_development
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: ["./bin/rails", "server", "-b", "0.0.0.0"]
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/rails:cached
+    environment:
+      RAILS_ENV: development
+      REDIS_URL: redis://redis:6379/1
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: flashforge_development
+      DB_TEST_NAME: flashforge_test
+      DB_PRODUCTION_NAME: flashforge_production
+      RAILS_LOG_TO_STDOUT: "true"
+    depends_on:
+      - db
+      - redis
+
+volumes:
+  db-data:
