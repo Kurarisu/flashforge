@@ -14,7 +14,7 @@ A Rails 7 + PostgreSQL + Redis sample project for learning API development, chec
 ## Tech Stack
 
 - Ruby 3.3.5
-- Rails 7.2
+- Rails 8.1
 - PostgreSQL 16
 - Redis 7
 - Docker Compose
